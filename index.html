@@ -6,9 +6,23 @@
             name="viewport"
             content="width=, initial-scale=1.0"
         />
+        <link
+            rel="stylesheet"
+            href="style.css"
+        />
         <title>ToDo TypeScript</title>
     </head>
     <body>
+        <form class="container">
+            <label for="name">Task: </label>
+            <input
+                type="text"
+                id="name"
+            />
+            <button>Add</button>
+            <p>Todo:</p>
+            <ul class="tasks"></ul>
+        </form>
         <script src="dist/app.js"></script>
     </body>
 </html>
