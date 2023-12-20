@@ -8,13 +8,13 @@ export const render = (tasks: Task[], tasksContainerElement: HTMLElement) => {
         const id: string = `task ${index}`;
         const taskLabelElement: HTMLLabelElement =
             document.createElement('label');
-        taskLabelElement.innerText = task.title;
+        taskLabelElement.innerText = task.name;
         taskLabelElement.setAttribute('for', id);
 
         const checkboxElement: HTMLInputElement =
             document.createElement('input');
         checkboxElement.type = 'checkbox';
-        checkboxElement.title = task.title;
+        checkboxElement.title = task.name;
         checkboxElement.id = id;
         checkboxElement.checked = task.done;
         checkboxElement.addEventListener(

@@ -10,9 +10,9 @@ const categoriesContainerElement: HTMLElement =
 let selectedCategory: Category;
 
 const tasks: Task[] = [
-    { title: 'Wyrzucić śmieci', done: false },
-    { title: 'Pójść na siłkę', done: true, category: Category.GYM },
-    { title: 'Nakarmić psa', done: false, category: Category.WORK },
+    new Task('Wyrzucić śmieci', false),
+    new Task('Pójść na siłkę', false, Category.GYM),
+    new Task('Nakarmić psa', true, Category.WORK),
 ];
 
 const categories: Category[] = [Category.GENERAL, Category.WORK, Category.GYM];
@@ -27,11 +27,7 @@ const updateSelectedCategory = (newCategory: Category) => {
 
 addButtonElement.addEventListener('click', (e: Event) => {
     e.preventDefault();
-    addTask({
-        title: taskNameInputElement.value,
-        done: false,
-        category: selectedCategory,
-    });
+    addTask(new Task(taskNameInputElement.value, false, selectedCategory));
     render(tasks, tasksContainerElement);
 });
 
